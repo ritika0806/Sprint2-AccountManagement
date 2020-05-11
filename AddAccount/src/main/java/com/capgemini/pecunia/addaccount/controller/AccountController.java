@@ -19,7 +19,6 @@ public class AccountController {
 
 	@Autowired
 	private AccountManagementService service;
-	
 	@PostMapping("/create")
 	public ResponseEntity<Customer> addAccount(@RequestBody Customer customer ){
 		
