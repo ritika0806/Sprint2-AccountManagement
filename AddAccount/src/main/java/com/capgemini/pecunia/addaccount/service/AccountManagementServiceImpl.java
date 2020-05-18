@@ -2,12 +2,14 @@ package com.capgemini.pecunia.addaccount.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.capgemini.pecunia.addaccount.dao.CustomerDao;
 import com.capgemini.pecunia.addaccount.entity.Customer;
 
 
 @Service
+@Transactional
 public class AccountManagementServiceImpl implements AccountManagementService {
 
 	@Autowired
