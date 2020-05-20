@@ -21,13 +21,9 @@ public class AccountController {
 	private AccountManagementService service;
 	@PostMapping("/create")
 	public ResponseEntity<Customer> addAccount(@RequestBody Customer customer ){
-		
 		Customer cust= service.addAccount(customer);
 		ResponseEntity<Customer> responseEntity = new ResponseEntity<Customer>(cust,HttpStatus.OK);
 		return responseEntity;
-		
-		
+			
 	}
-	
-	
 }
