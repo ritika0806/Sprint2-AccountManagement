@@ -14,11 +14,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Account")	
-@SequenceGenerator(name="seq",initialValue=1000000000,allocationSize=1)
 public class Account {
-	@Id   //primarykey
-	@Column(length=12) //length of column  
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Id   
+	@Column(length=12)  
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="genName1")
+	@SequenceGenerator(name="genName1", sequenceName="acc",initialValue=1000000000,allocationSize=1)
 	private long accountId;
 	@Column(length=15)
 	private String branch;

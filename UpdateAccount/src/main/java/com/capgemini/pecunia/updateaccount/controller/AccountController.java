@@ -19,16 +19,16 @@ public class AccountController {
 	AccountManagementService service;
 	
 	@PutMapping("/updateName/{accountId}/{customerName}")
-	public void updateName(@PathVariable Long accountId,@PathVariable String customerName) {
+	public void updateName(@PathVariable long accountId,@PathVariable String customerName) {
 		service.updateName(accountId,customerName);
 	}
 	
 	@PutMapping("/updateContact/{accountId}/{customerContact}")
-	 public void updateContact(@PathVariable Long accountId ,@PathVariable String customerContact) {
+	 public void updateContact(@PathVariable long accountId ,@PathVariable String customerContact) {
 		service.updateContact(accountId,customerContact);
 	}
 	@PutMapping("/updateAddress/{accountId}/{Address}")
-	public void updateAddress(@PathVariable Long accountId ,@PathVariable String Address) {
+	public void updateAddress(@PathVariable long accountId ,@PathVariable String Address) {
           service.updateAddress(accountId,Address);
 }
 	

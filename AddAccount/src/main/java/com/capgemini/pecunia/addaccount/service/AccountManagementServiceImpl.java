@@ -14,7 +14,9 @@ public class AccountManagementServiceImpl implements AccountManagementService {
 
 	@Autowired
 	private CustomerDao dao;
-	
+	//This method creates an account of the customer 
+	//It takes customer object as the input from the front end
+	//Account gets created when all the inputs are correctly given
 	@Override
 	public Customer addAccount(Customer customer) {
 	 return dao.save(customer);

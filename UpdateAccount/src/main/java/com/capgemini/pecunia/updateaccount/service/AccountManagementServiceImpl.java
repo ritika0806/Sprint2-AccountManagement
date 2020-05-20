@@ -14,41 +14,25 @@ public class AccountManagementServiceImpl implements AccountManagementService{
 
 	@Autowired
 	private AccountManagementDao dao;
-
+   //This method updates the customer Name
+   //It takes accountId and Customer name as input and updates the name of the customer
 	@Override
-	public void updateName(Long accountId, String customerName) {
+	public void updateName(long accountId, String customerName) {
 		dao.updateName(accountId, customerName);
 		
 	}	
+	//This method updates the customer contact
+	 //It takes accountId and Customer contact as input and updates the contact no of the customer
 	@Override
-	public void updateContact(Long accountId, String customerContact) {
+	public void updateContact(long accountId, String customerContact) {
 		dao.updateContact(accountId, customerContact);
 	}
+	//This method updates the customer Address
+	 //It takes accountId and Customer address as input and updates the address of the customer
 	@Override
-	public void updateAddress(Long accountId, String Address) {
+	public void updateAddress(long accountId, String Address) {
 		dao.updateAddress(accountId, Address);
-		
-		
-	
+	}
 		
 	}
 
-	
-		
-	}
-
-/*
- public void updateAccount(String accountId,String customerName) {
-		System.out.println("This is accountId"+accountId);
-		dao.updateAccount(accountId,customerName);
-		
- public void updateAccount(String accountId, String contactNumber) {
-		System.out.println("This is accountId"+accountId);
-		dao.updateAccount(accountId,contactNumber);
-		
-		public void updateAccount(String accountId, String address) {
-		System.out.println("This is accountId"+accountId);
-		dao.updateAccount(accountId,address);
- */
-
-	

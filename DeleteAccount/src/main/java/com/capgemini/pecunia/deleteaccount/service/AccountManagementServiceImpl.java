@@ -9,14 +9,16 @@ import com.capgemini.pecunia.deleteaccount.dao.AccountManagementDao;
 import com.capgemini.pecunia.exceptions.Id_NotFound_Exception;
 
 
-@SuppressWarnings("unused")
+
 @Service
 @Transactional
 public class AccountManagementServiceImpl implements AccountManagementService {
  
 	@Autowired
 	private AccountManagementDao dao;
-
+     //This method deletes the account from the database
+	//It takes accountId as input
+	//If the accountId is not found, it throws an exception
 	@Override
 	public String deleteAccount(long accountId) throws Id_NotFound_Exception {
 		System.out.println("this is service"+accountId);

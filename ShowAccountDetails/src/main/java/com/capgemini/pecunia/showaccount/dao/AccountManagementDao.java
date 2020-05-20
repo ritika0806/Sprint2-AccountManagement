@@ -14,7 +14,7 @@ public interface AccountManagementDao extends JpaRepository<Customer,Integer> {
 
 	
 	@Query("select f from Customer f where account_Id=?1")
-	Optional<Customer> findByAccountId(String accountId);
+	Optional<Customer> findByAccountId(long accountId);
 
 	
 	

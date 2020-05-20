@@ -6,7 +6,7 @@ import com.capgemini.pecunia.showaccount.entity.Customer;
 
 public interface AccountManagementService {
 
-	Optional<Customer> findByAccountId(String accountId);
+	Optional<Customer> findByAccountId(long accountId);
 
 	
 }

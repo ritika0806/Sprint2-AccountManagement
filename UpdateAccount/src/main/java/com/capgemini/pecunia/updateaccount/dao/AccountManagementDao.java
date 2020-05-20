@@ -13,15 +13,15 @@ public interface AccountManagementDao extends JpaRepository<Customer,Integer> {
 
 @Modifying
 @Query("update Customer SET customer_Name=?2 where account_Id=?1")
-void updateName(Long accountId,String customerName);
+void updateName(long accountId,String customerName);
 
 @Modifying
 @Query("update Customer SET contact_Number=?2 where account_Id=?1")
-void updateContact(Long accountId,String customerName);
+void updateContact(long accountId,String customerName);
 
 @Modifying
 @Query("update Customer SET address=?2 where account_Id=?1")
-void updateAddress(Long accountId,String customerName);
+void updateAddress(long accountId,String customerName);
 
 
 

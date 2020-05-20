@@ -14,9 +14,11 @@ public class AccountManagementServiceImpl implements AccountManagementService {
 
 	@Autowired
 	private AccountManagementDao dao;
-
+    //This method shows the account details of the customer
+	//It takes acccountId as input and displays the customer details
+	
 	@Override
-	public Optional<Customer> findByAccountId(String accountId) {
+	public Optional<Customer> findByAccountId(long accountId) {
 		return dao.findByAccountId(accountId);
 	}
 

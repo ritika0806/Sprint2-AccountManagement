@@ -22,7 +22,7 @@ public class AccountController {
 	private AccountManagementService service;
 	
 	@GetMapping("/find/{accountId}")
-	public Optional<Customer> findByAccountId(@PathVariable String accountId) {
+	public Optional<Customer> findByAccountId(@PathVariable long accountId) {
 		Optional<Customer> result=service.findByAccountId(accountId);
 			return result;
 	}
