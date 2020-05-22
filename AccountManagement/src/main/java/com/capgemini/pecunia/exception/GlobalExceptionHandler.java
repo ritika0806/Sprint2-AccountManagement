@@ -13,9 +13,5 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<String>(e.getMessage(),HttpStatus.OK);
 	}
 	
-	@ExceptionHandler(IdAlreadyExistsException.class)
-	public ResponseEntity<String> IdAlreadyExistsExceptionHandler(IdAlreadyExistsException e){
-		return new ResponseEntity<String>(e.getMessage(),HttpStatus.OK);
-	}
 	
 }

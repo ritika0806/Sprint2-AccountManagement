@@ -1,7 +1,5 @@
 package com.capgemini.pecunia.controller;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.capgemini.pecunia.entity.Customer;
-import com.capgemini.pecunia.exception.IdAlreadyExistsException;
 import com.capgemini.pecunia.exception.IdNotFoundException;
 import com.capgemini.pecunia.service.AccountManagementService;
 
@@ -34,6 +31,7 @@ public class AccountController {
 			ResponseEntity<Customer> responseEntity = new ResponseEntity<Customer>(cust,HttpStatus.OK);
 			return responseEntity;
 		}
+	
 	@PutMapping("/updateName/{accountId}/{customerName}")
 	public ResponseEntity<String> updateName(@PathVariable("accountId")long accountId,@PathVariable("customerName")String customerName) throws IdNotFoundException {	
 		Customer customer=service.findByAccountId(accountId);
@@ -60,6 +58,7 @@ public class AccountController {
 			return responseEntity;
 		}	
 	}
+	
 	@PutMapping("/updateAddress/{accountId}/{Address}")
 	public ResponseEntity<String> updateAddress(@PathVariable("accountId") long accountId ,@PathVariable("Address") String Address) throws IdNotFoundException {
           Customer customer=service.findByAccountId(accountId);
@@ -72,6 +71,7 @@ public class AccountController {
   			return responseEntity;
   		}	
 }
+	
 	@DeleteMapping("/delete/{accountId}")
 	public ResponseEntity<String> deleteAccount(@PathVariable("accountId") long accountId) throws IdNotFoundException 
 	{
@@ -84,6 +84,7 @@ public class AccountController {
 			return rs;
 		}
 	}
+	
 	@GetMapping("/find/{accountId}")
 	public Customer findByAccountId(@PathVariable long accountId)  {
 		return service.findByAccountId(accountId);

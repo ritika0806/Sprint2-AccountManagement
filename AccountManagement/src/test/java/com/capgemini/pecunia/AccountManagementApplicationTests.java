@@ -38,23 +38,19 @@ class AccountManagementApplicationTests {
 			account.setAmount((long) 2000);
 			customer.setAadharNumber("258963147722");
 			customer.setCustomerName("shreya");
-		
-			customer.setContactNumber("234567896");
+		    customer.setContactNumber("234567896");
 			customer.setPanNumber("abvgft123");
 			customer.setDateOfBirth("31-JAN-1999");
 			customer.setGender("female");
 			customer.setAddress("Khammam");
 			customer.setAccount(account);
-	        
 	        HttpHeaders headers = new HttpHeaders();
 	        headers.set("X-COM-PERSIST", "account successfully created ");      
 	        HttpEntity<Customer> request = new HttpEntity<>(customer, headers);
-	        
 	        ResponseEntity<String> result = restTemplate.postForEntity(uri, request, String.class);
 		    Assertions.assertEquals(200, result.getStatusCodeValue());
 		    Assertions.assertNotNull(customer);
-		
-	}
+ }
 	@org.junit.jupiter.api.Test
 	public void showAccountDetailsTest() throws URISyntaxException {
 		RestTemplate restTemplate=new RestTemplate();
@@ -89,8 +85,6 @@ class AccountManagementApplicationTests {
 	HttpHeaders headers = new HttpHeaders();
     headers.set("X-COM-MERGE", "successfully updated");      
     HttpEntity<Customer> request = new HttpEntity<>(customer, headers);
-    
-    //ResponseEntity<String> result = restTemplate.postForEntity(uri, request, String.class);
     HttpEntity<String> result = restTemplate.exchange(uri, HttpMethod.PUT, request, String.class);
     Assertions.assertEquals(200, ((ResponseEntity<String>) result).getStatusCodeValue());
 	 }
@@ -98,38 +92,26 @@ class AccountManagementApplicationTests {
 	
 	@Test
 	public void updateContact() throws URISyntaxException {
-
 	RestTemplate restTemplate = new RestTemplate();
-    
     final String baseUrl = "http://localhost:" + 1234 + "/bank/updateContact/1875662208/923456785";
     URI uri = new URI(baseUrl);
- 
     Customer customer=new Customer();
-    
-	HttpHeaders headers = new HttpHeaders();
+    HttpHeaders headers = new HttpHeaders();
     headers.set("X-COM-MERGE", "successfully updated");      
     HttpEntity<Customer> request = new HttpEntity<>(customer, headers);
-    
-    //ResponseEntity<String> result = restTemplate.postForEntity(uri, request, String.class);
     HttpEntity<String> result = restTemplate.exchange(uri, HttpMethod.PUT, request, String.class);
     Assertions.assertEquals(200, ((ResponseEntity<String>) result).getStatusCodeValue());
 	 }
 
 	@Test
 	public void updateAddress() throws URISyntaxException {
-
-	RestTemplate restTemplate = new RestTemplate();
-    
+    RestTemplate restTemplate = new RestTemplate();
     final String baseUrl = "http://localhost:" + 1234 + "/bank/updateAddress/1875662208/Hyderbadd";
     URI uri = new URI(baseUrl);
- 
     Customer customer=new Customer();
-    
-	HttpHeaders headers = new HttpHeaders();
+    HttpHeaders headers = new HttpHeaders();
     headers.set("X-COM-MERGE", "successfully updated");      
     HttpEntity<Customer> request = new HttpEntity<>(customer, headers);
-    
-    //ResponseEntity<String> result = restTemplate.postForEntity(uri, request, String.class);
     HttpEntity<String> result = restTemplate.exchange(uri, HttpMethod.PUT, request, String.class);
     Assertions.assertEquals(200, ((ResponseEntity<String>) result).getStatusCodeValue());
 	 }
